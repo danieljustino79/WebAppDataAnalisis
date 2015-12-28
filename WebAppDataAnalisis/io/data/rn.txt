@@ -1,0 +1,15 @@
+The system must only read .dat files.
+
+{flat_file_name}.done.dat: (Linq)
+? Amount of clients in the input file
+? Amount of salesman in the input file
+? ID of the most expensive sale
+? Worst salesman ever
+
+Listener
+This application should be running all the time, without any breaks. Everytime new files
+become available, everything should be executed.
+
+Salesman = "001",
+Customer = "002",
+Sales = "003"
