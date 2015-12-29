@@ -7,9 +7,12 @@ namespace WebAppDataAnalisis.Controllers
     {
         public ActionResult Index()
         {
-            //ViewBag["def"] = System.Environment. System.Environment.GetEnvironmentVariable("%homepath%");
-            Reader reader = new Reader();            
-            return View(reader.ComputeIn());
+            Reader reader = new Reader();
+            var objComplex = reader.ComputeIn();
+            Writer writer = new Writer();
+            writer.ComputeOut(objComplex);
+
+            return View(objComplex);
         }
 
         public ActionResult About()

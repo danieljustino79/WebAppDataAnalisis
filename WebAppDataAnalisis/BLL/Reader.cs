@@ -14,17 +14,18 @@ namespace WebAppDataAnalisis.BLL
         public ComplexType ComputeIn()
         {
             ComplexType complexType;
+            //---"C:/HOST/IIS/WebAppDataAnalisis/WebAppDataAnalisis/io/data/in/sales.dat"
+            string path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "io/data/in/sales.dat");
 
             try
             {
                 complexType = new ComplexType();
                 using(StreamReader sr = new
-                    StreamReader("C:/HOST/IIS/WebAppDataAnalisis/WebAppDataAnalisis/io/data/in/sales.dat", Encoding.GetEncoding("iso-8859-1")))
+                    StreamReader(path, Encoding.GetEncoding("iso-8859-1")))
                 {
                     String line;
                     while ((line = sr.ReadLine()) != null)
                     {
-                        //String line = sr.ReadLine();
                         string[] values = line.Split(separator);
                         string cod = values[0];
 
