@@ -13,3 +13,7 @@ become available, everything should be executed.
 Salesman = "001",
 Customer = "002",
 Sales = "003"
+
+using (Stream stream = File.Open(path, FileMode.Create)){
+                    stream.Write("oi", 0, "oi".Length);
+                }

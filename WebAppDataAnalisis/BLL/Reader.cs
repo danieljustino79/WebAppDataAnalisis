@@ -15,7 +15,7 @@ namespace WebAppDataAnalisis.BLL
         {
             ComplexType complexType;
             //---"C:/HOST/IIS/WebAppDataAnalisis/WebAppDataAnalisis/io/data/in/sales.dat"
-            string path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "io/data/in/sales.dat");
+            string path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "data/in/sales.dat");
 
             try
             {
@@ -49,11 +49,11 @@ namespace WebAppDataAnalisis.BLL
                                 foreach (var ic in itemComplex)
 	                            {
                                     var temp = ic.Split('-');
-                                    item = new Item(int.Parse(temp[0]), int.Parse(temp[1]), double.Parse(temp[2]));
+                                    item = new Item(int.Parse(values[1]), int.Parse(temp[0]), int.Parse(temp[1]), double.Parse(temp[2]));
                                     listItem.Add(item);
 	                            }
 
-                                Sales sales = new Sales(values[0], listItem, values[2]);
+                                Sales sales = new Sales(values[0], listItem, values[3]);
                                 complexType.listSales.Add(sales);
                                 break;
                             default:
